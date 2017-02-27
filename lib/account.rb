@@ -6,6 +6,10 @@ class Account
     @balance = 0
   end
 
+  def deposit
+
+  end
+
   def withdraw
 
   end

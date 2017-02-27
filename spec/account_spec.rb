@@ -7,5 +7,7 @@ describe Account do
     expect(account.balance).to eq 0
   end
 
+  it { is_expected.to respond_to(:deposit) }
+
   it { is_expected.to respond_to(:withdraw) }
 end
