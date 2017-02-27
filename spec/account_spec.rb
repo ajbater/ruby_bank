@@ -7,7 +7,11 @@ describe Account do
     expect(account.balance).to eq 0
   end
 
-  it { is_expected.to respond_to(:deposit) }
+  context 'making deposits' do
+    it { is_expected.to respond_to(:deposit).with(1).argument }
+  end
 
-  it { is_expected.to respond_to(:withdraw) }
+  context 'making withdrawals' do
+    it { is_expected.to respond_to(:withdraw).with(1).argument }
+  end
 end
