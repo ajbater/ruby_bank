@@ -12,4 +12,6 @@ describe Statement do
     statement.create_transaction('deposit', 100)
     expect(statement.transactions.length).to eq 1
   end
+
+  it { is_expected.to respond_to(:print_statement) }
 end

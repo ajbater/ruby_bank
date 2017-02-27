@@ -12,4 +12,8 @@ class Statement
     self.transactions << Transaction.new(type, amount)
   end
 
+  def print_statement
+    
+  end
+
 end
