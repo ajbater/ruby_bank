@@ -1,9 +1,11 @@
 class Account
 
   attr_accessor :balance
+  attr_reader :statement
 
-  def initialize
+  def initialize(statement_klass)
     @balance = 0
+    @statement = statement_klass.new
   end
 
   def deposit(amount)
