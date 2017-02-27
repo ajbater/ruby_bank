@@ -30,10 +30,16 @@ describe Account do
   context 'making withdrawals' do
     it 'subtracts the correct amount from the balance when you make a deposit' do
       allow(statement).to receive(:create_transaction).with('deposit', 100)
-      allow(statement).to receive(:create_transaction).with('withdrawal', 50)
+      allow(statement).to receive(:create_transaction).with('debit', 50)
       account.deposit(100)
-      account.withdraw(50)
+      account.debit(50)
       expect(account.balance).to eq 50
+    end
+
+    it 'when making a withdrawal it adds a transaction object to the statement' do
+      allow(statement).to receive(:create_transaction).with('debit', 50)
+      statement.should_receive(:create_transaction).once.with('debit', 50)
+      account.debit(50)
     end
   end
 end

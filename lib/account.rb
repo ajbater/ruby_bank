@@ -13,8 +13,9 @@ class Account
     self.statement.create_transaction('deposit', amount)
   end
 
-  def withdraw(amount)
+  def debit(amount)
     self.balance -= amount
+    self.statement.create_transaction('debit', amount)
   end
 
 end
