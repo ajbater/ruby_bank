@@ -22,7 +22,7 @@ describe Account do
 
     it 'when making a deposit it adds a transaction object to the statement' do
       allow(statement).to receive(:create_transaction).with('deposit', 100)
-      statement.should_receive(:create_transaction).once
+      statement.should_receive(:create_transaction).once.with('deposit', 100)
       account.deposit(100)
     end
   end
