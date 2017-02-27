@@ -22,7 +22,7 @@ describe Account do
 
     it 'when making a deposit it adds a transaction object to the statement' do
       allow(statement).to receive(:create_transaction).with('deposit', 100)
-      statement.should_receive(:create_transaction).once.with('deposit', 100)
+      expect(statement).to receive(:create_transaction).with('deposit', 100)
       account.deposit(100)
     end
   end
@@ -38,8 +38,10 @@ describe Account do
 
     it 'when making a withdrawal it adds a transaction object to the statement' do
       allow(statement).to receive(:create_transaction).with('debit', 50)
-      statement.should_receive(:create_transaction).once.with('debit', 50)
+      expect(statement).to receive(:create_transaction).with('debit', 50)
       account.debit(50)
     end
   end
+
+  it { is_expected.to respond_to(:request_statement) }
 end

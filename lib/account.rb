@@ -18,4 +18,8 @@ class Account
     self.statement.create_transaction('debit', amount)
   end
 
+  def request_statement
+
+  end
+
 end
