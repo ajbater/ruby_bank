@@ -6,4 +6,8 @@ class Account
     @balance = 0
   end
 
+  def withdraw
+
+  end
+
 end
