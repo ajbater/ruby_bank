@@ -8,8 +8,6 @@ describe Account do
   end
 
   context 'making deposits' do
-    it { is_expected.to respond_to(:deposit).with(1).argument }
-
     it 'adds the correct amount to the balance when you make a deposit' do
       account.deposit(100)
       expect(account.balance).to eq 100
@@ -17,6 +15,10 @@ describe Account do
   end
 
   context 'making withdrawals' do
-    it { is_expected.to respond_to(:withdraw).with(1).argument }
+    it 'subtracts the correct amount from the balance when you make a deposit' do
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.balance).to eq 50
+    end
   end
 end

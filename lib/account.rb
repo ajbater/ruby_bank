@@ -11,7 +11,7 @@ class Account
   end
 
   def withdraw(amount)
-
+    self.balance -= amount
   end
 
 end
