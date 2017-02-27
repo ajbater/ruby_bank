@@ -9,6 +9,11 @@ describe Account do
 
   context 'making deposits' do
     it { is_expected.to respond_to(:deposit).with(1).argument }
+
+    it 'adds the correct amount to the balance when you make a deposit' do
+      account.deposit(100)
+      expect(account.balance).to eq 100
+    end
   end
 
   context 'making withdrawals' do
