@@ -21,6 +21,10 @@ describe Account do
       account.deposit(100)
       expect(account.balance).to eq 100
     end
+
+    # it 'when making a deposit it adds a transaction object to the statement' do
+    #
+    # end
   end
 
   context 'making withdrawals' do
